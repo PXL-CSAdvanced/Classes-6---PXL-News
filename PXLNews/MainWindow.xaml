@@ -1,0 +1,46 @@
+﻿<Window x:Class="PXLNews.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PXLNews"
+        mc:Ignorable="d"
+        Title="PXL News" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.RowSpan="3" Background="Green">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="1" Margin="15" Click="VolgendeButton_Click">Volgende</Button>
+            <Button Grid.Row="2" Margin="15" Click="VorigeButton_Click">Vorige</Button>
+        </Grid>
+        <Viewbox Grid.Column="1" Margin="15" Grid.ColumnSpan="2">
+            <TextBlock Name="TitelTextBlock" >Titel Artikel</TextBlock>
+        </Viewbox>
+        <StackPanel Margin="15" Grid.Column="2" Grid.Row="1"
+                    Background="Black" Visibility="Collapsed"></StackPanel>
+        <TextBox Name="InhoudTextBox"
+            Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" Margin="15" IsReadOnly="True"
+                 VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" FontSize="16">
+            inhoud artikel
+        </TextBox>
+        <Image Grid.Row="1" Grid.Column="2" Margin="15" Name="ArtikelImage"></Image>
+        <StackPanel Grid.Row="2" Grid.Column="1" Margin="15">
+            <TextBlock Margin="10 0" Name="JournalistTextBlock">naam journalist</TextBlock>
+            <TextBlock Margin="10 0" Name="DatumTextBlock">datum van publicatie</TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>
